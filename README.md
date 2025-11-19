@@ -10,7 +10,8 @@ A calm and aesthetic workspace that blends **Pomodoro focus**, **tasks**, **note
 <br/>
 
 <!-- App Preview Image -->
-<img src="ADD-YOUR-APP-PREVIEW-IMAGE-HERE" alt="App Interface Preview"/>
+<img src="https://raw.githubusercontent.com/SanyogitaR/koroMado-timer/main/images/index%20page%20(1).png" alt="Index Page" />
+
 
 </div>
 
@@ -34,7 +35,10 @@ A simple and elegant authentication system:
 - Sync features planned
 
 <!-- Add Your Login/Signup Image -->
-<img src="ADD-LOGIN-SIGNUP-IMAGE-HERE" alt="Login Signup Preview"/>
+<img src="https://raw.githubusercontent.com/SanyogitaR/koroMado-timer/main/images/login%20page.png" alt="Login Page" />
+<img src="https://raw.githubusercontent.com/SanyogitaR/koroMado-timer/main/images/signup%20page.png" alt="Signup Page" />
+
+
 
 ---
 
@@ -45,7 +49,8 @@ A simple and elegant authentication system:
 - Minimal distraction-free UI  
 
 <!-- Add Your Pomodoro Image -->
-<img src="ADD-POMODORO-IMAGE-HERE" alt="Pomodoro Timer Preview"/>
+<img src="https://raw.githubusercontent.com/SanyogitaR/koroMado-timer/main/images/main%20page.png" alt="Main Page" />
+
 
 ---
 
@@ -57,7 +62,8 @@ Choose from calm immersive themes:
 - Custom uploads  
 
 <!-- Add Your Background Themes Image -->
-<img src="ADD-BACKGROUND-THEMES-IMAGE-HERE" alt="Themes Preview"/>
+<img src="https://raw.githubusercontent.com/SanyogitaR/koroMado-timer/main/images/bg%20page.png" alt="Background Page" />
+
 
 ---
 
@@ -68,7 +74,7 @@ Link your Spotify to enjoy:
 - Music controls inside the app  
 
 <!-- Add Your Spotify Image -->
-<img src="ADD-SPOTIFY-IMAGE-HERE" alt="Spotify Integration Preview"/>
+<
 
 ---
 
