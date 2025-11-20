@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/SanyogitaR/koroMado-timer/main/images/octopus.png" width="160" alt="Koro Mado Logo"/>
+<img src="https://raw.githubusercontent.com/SanyogitaR/koroMado-timer/main/images/octopus.png" width="360" alt="Koro Mado Logo"/>
 
 # 🌸 Koro Mado Timer  
 ### *Your serene Japanese-inspired productivity space.*
@@ -15,17 +15,17 @@ A calm and aesthetic workspace that blends **Pomodoro focus**, **tasks**, **note
 
 </div>
 
----
+
 
 ## 🌿 About Koro Mado  
 **Koro Mado (コロ窓)** means *“a little window.”*  
 This project is your peaceful digital study desk — soft, aesthetic, functional, and motivating.
 
----
+
 
 ## ✨ Features Overview
 
----
+
 
 ### 🔐 **Login & Sign Up**
 A simple and elegant authentication system:
@@ -131,8 +131,6 @@ The UI feels like your personal cozy study space.
 - **Spotify Auth:** OAuth  
 - **Deployment:** AWS / Vercel / Netlify  
 
----
 
-## 🚀 Getting Started
 
 
