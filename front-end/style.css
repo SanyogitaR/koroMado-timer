@@ -1,0 +1,358 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Container */
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Background Image */
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Centered Logo */
+.logo-center {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-large {
+  width: 360px;
+  height: 204px;
+}
+
+.logo-center h1 {
+  font-size: 32px;
+  color: #000;
+}
+
+/* Glassmorphic Box (same on both pages) */
+.glassbox {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.04); /* more see-through */
+  backdrop-filter: blur(6px); /* lighter blur */
+  -webkit-backdrop-filter: blur(6px); /* for Safari support */
+  border-radius: 20px;
+  padding: 30px 60px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+}
+.glassbox a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Play Button */
+.play-button {
+  font-size: 64px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(0, 200, 255, 0.9);
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.15);
+  text-shadow: 0 0 20px rgba(0, 200, 255, 1);
+}
+
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #00f0ff, 0 0 24px #005eff;
+  color: #fff;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* You can increase this */
+}
+
+
+/* Subline Animation */
+.subline {
+  font-size: 18px;
+  font-weight: 500;
+  color: #f0f8ff;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(0, 200, 255, 0.7);
+  animation: floatText 5s ease-in-out infinite;
+}
+
+
+/* Aquatic Floating Animation */
+@keyframes floatText {
+  0% { transform: translateY(0); letter-spacing: 1px; }
+  25% { transform: translateY(-3px); letter-spacing: 2px; }
+  50% { transform: translateY(0); letter-spacing: 1px; }
+  75% { transform: translateY(3px); letter-spacing: 2px; }
+  100% { transform: translateY(0); letter-spacing: 1px; }
+}
+
+/* Login Button Layout */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+/* Animated Button Glow for Sign In & Login */
+.auth-btn {
+  height: 48px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: pulseGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 12px #00f0ff, 0 0 24px #005eff;
+}
+
+.auth-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  box-shadow: 0 0 20px #00f0ff, 0 0 35px #005eff;
+}
+
+/* Blue Glow Pulse */
+@keyframes pulseGlow {
+  0%   { box-shadow: 0 0 10px #00f0ff, 0 0 20px #005eff; }
+  50%  { box-shadow: 0 0 20px #00f0ff, 0 0 40px #005eff; }
+  100% { box-shadow: 0 0 10px #00f0ff, 0 0 20px #005eff; }
+}
+
+/* Glass Shimmer Movement */
+@keyframes shimmerMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.form-box {
+  width: 340px;
+  padding: 40px 30px; /* slightly more padding */
+  min-height: 460px;  /* added more vertical space */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+  background-color: #002b80; /* deep navy blue */
+   color: #ffffff !important;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Form Inputs */
+form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 15px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Form Heading with floating animation */
+.form-heading {
+  color: #fff;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+  animation: floatText 5s ease-in-out infinite;
+}
+
+/* Links inside form */
+.form-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 10px;
+  color: #efecec;
+}
+.form-links a {
+  color: #fff;
+  text-decoration: none;
+}
+.form-links span {
+   color: #021b46;
+}
+
+/* Button image wrapper */
+.form-btn-wrap {
+  margin-top: 20px;
+}
+.form-btn-img {
+  height: 48px;
+  cursor: pointer;
+  border-radius: 12px;
+  animation: pulseGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 12px #00f0ff, 0 0 24px #021b46;
+}
+.glow-btn {
+  height: 48px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #00f0ff, #005eff);
+  cursor: pointer;
+  animation: pulseGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 12px #00f0ff, 0 0 24px #005eff;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  box-shadow: 0 0 20px #00f0ff, 0 0 35px #005eff;
+}
+/* === Glow Play/Reset Buttons === */
+.glow-button {
+  padding: 10px 16px;
+  font-size: 24px;
+  background: #ffffff10;
+  border: 1px solid #ffffff40;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  animation: pulseGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00f0ff, 0 0 30px #005eff;
+}
+
+
+/* === Spotify Wrapper === */
+.spotify-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  text-align: center;
+  z-index: 10;
+}
+
+.spotify-wrapper-container {
+  position: relative;
+}
+
+/* Overlay Play Button inside Spotify Card */
+.spotify-overlay-play {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.2s ease;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.spotify-overlay-play:hover {
+  transform: scale(1.2);
+}
+
+.playlist-input {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.playlist-input input {
+  flex: 1;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  outline: none;
+}
+
+.playlist-input button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #002b80;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.playlist-input button:hover {
+  background-color: #0040c0;
+}
+.theme-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-option img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}

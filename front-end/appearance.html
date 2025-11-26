@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appearance</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stylerain.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .rain-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .background {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .logo-center {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .icon-large {
+      width: 60px;
+      vertical-align: middle;
+    }
+
+    .logo-center h1 {
+      display: inline-block;
+      font-size: 2rem;
+      color: black;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .glassbox-theme {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      width: 85%;
+      max-width: 900px;
+      z-index: 2;
+    }
+
+    .glassbox-theme h2 {
+      color: white;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 5px;
+    }
+
+    .theme-box {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .theme-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .theme-box:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px white;
+    }
+
+    .close-icon {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      padding: 4px 10px;
+      z-index: 3;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .close-icon:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rain-container"></div>
+
+  <div class="container">
+    <img src="images/background.jpg" class="background" alt="bg" />
+
+    <div class="logo-center">
+      <img src="images/octopus.png" alt="octopus" class="icon-large" />
+      <h1>koroMado timer</h1>
+    </div>
+
+    <a href="main.html" class="close-icon">&#10005;</a>
+
+    <div class="glassbox-theme">
+      <h2>Choose your Theme</h2>
+      <div class="theme-grid">
+        <!-- Theme Boxes (Correct onclick and src) -->
+        <div class="theme-box" onclick="applyTheme('theme1.jpg')">
+          <img src="images/themes/theme1.jpg" alt="Theme 1" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme2.jpg')">
+          <img src="images/themes/theme2.jpg" alt="Theme 2" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme3.jpg')">
+          <img src="images/themes/theme3.jpg" alt="Theme 3" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme4.jpg')">
+          <img src="images/themes/theme4.jpg" alt="Theme 4" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme5.jpg')">
+          <img src="images/themes/theme5.jpg" alt="Theme 5" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme6.jpg')">
+          <img src="images/themes/theme6.jpg" alt="Theme 6" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme7.jpg')">
+          <img src="images/themes/theme7.jpg" alt="Theme 7" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme8.jpg')">
+          <img src="images/themes/theme8.jpg" alt="Theme 8" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme9.jpg')">
+          <img src="images/themes/theme9.jpg" alt="Theme 9" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme10.jpg')">
+          <img src="images/themes/theme10.jpg" alt="Theme 10" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme11.jpg')">
+          <img src="images/themes/theme11.jpg" alt="Theme 11" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme12.jpg')">
+          <img src="images/themes/theme12.jpg" alt="Theme 12" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme13.jpg')">
+          <img src="images/themes/theme13.jpg" alt="Theme 13" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme14.jpg')">
+          <img src="images/themes/theme14.jpg" alt="Theme 14" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme15.jpg')">
+          <img src="images/themes/theme15.jpg" alt="Theme 15" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme16.jpg')">
+          <img src="images/themes/theme16.jpg" alt="Theme 16" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme17.jpg')">
+          <img src="images/themes/theme17.jpg" alt="Theme 17" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme18.jpg')">
+          <img src="images/themes/theme18.jpg" alt="Theme 18" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme19.jpg')">
+          <img src="images/themes/theme19.jpg" alt="Theme 19" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme20.jpg')">
+          <img src="images/themes/theme20.jpg" alt="Theme 20" />
+        </div>
+        <div class="theme-box" onclick="applyTheme('theme21.jpg')">
+    <img src="images/themes/theme21.jpg" alt="Theme 21" />
+  </div>
+  <div class="theme-box" onclick="applyTheme('theme22.jpg')">
+    <img src="images/themes/theme22.jpg" alt="Theme 22" />
+  </div>
+  <div class="theme-box" onclick="applyTheme('theme23.jpg')">
+    <img src="images/themes/theme23.jpg" alt="Theme 23" />
+  </div>
+  <div class="theme-box" onclick="applyTheme('theme24.jpg')">
+    <img src="images/themes/theme24.jpg" alt="Theme 24" />
+  </div>
+  <div class="theme-box" onclick="applyTheme('theme25.jpg')">
+    <img src="images/themes/theme25.jpg" alt="Theme 25" />
+  </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Change background image when a theme is clicked
+   function applyTheme(themeFile) {
+    // Save theme to localStorage
+    localStorage.setItem("selectedTheme", themeFile);
+    
+    // Apply immediately to current page
+    document.querySelector(".background").src = "images/themes/" + themeFile;
+  }
+
+    // Rain animation
+    const rainContainer = document.querySelector('.rain-container');
+    const totalDrops = 100;
+
+    for (let i = 0; i < totalDrops; i++) {
+      const drop = document.createElement('div');
+      drop.classList.add('drop');
+      drop.style.left = Math.random() * 100 + 'vw';
+      drop.style.animationDuration = 0.5 + Math.random() * 1.5 + 's';
+      drop.style.animationDelay = Math.random() * 2 + 's';
+      drop.style.height = 10 + Math.random() * 20 + 'px';
+      rainContainer.appendChild(drop);
+    }
+  </script>
+</body>
+
+</html>

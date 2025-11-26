@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KoroMado Timer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stylerain.css" />
+
+</head>
+
+
+
+<body>
+  <div class="rain-container"></div>
+
+ 
+  <div class="container">
+    <img src="images/background.jpg" class="background" alt="bg" />
+
+    <!-- Centered Logo -->
+    <div class="logo-center">
+      <img src="images/octopus.png" alt="octopus" class="icon-large" />
+
+    </div>
+
+    <!-- Main Play Box -->
+    <div class="glassbox">
+      <a href="login.html">
+        <div class="play-button">&#9658;</div>
+      </a>
+      <p class="subline">Open the Window. Close the Distractions.</p>
+    </div>
+  </div>
+  <script>
+  const rainContainer = document.querySelector('.rain-container');
+  const totalDrops = 100;
+
+  for (let i = 0; i < totalDrops; i++) {
+    const drop = document.createElement('div');
+    drop.classList.add('drop');
+
+    // Random horizontal start position
+    drop.style.left = Math.random() * 100 + 'vw';
+    // Random animation duration (speed)
+    drop.style.animationDuration = 0.5 + Math.random() * 1.5 + 's';
+    // Random delay so they don't all fall at once
+    drop.style.animationDelay = Math.random() * 2 + 's';
+    // Random height
+    drop.style.height = 10 + Math.random() * 20 + 'px';
+
+    rainContainer.appendChild(drop);
+  }
+</script>
+
+</body>
+
+</html>

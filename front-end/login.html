@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - KoroMado Timer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stylerain.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="images/background.jpg" class="background" alt="bg" />
+
+    <!-- Logo Centered -->
+    <div class="logo-center">
+      <img src="images/octopus.png" alt="octopus" class="logo-img icon-large" />
+    </div>
+
+    <!-- Glass Box with Login Form -->
+    <div class="glassbox form-box">
+      <a href="index.html" class="close-btn">✕</a>
+      <h2 class="form-heading">Login</h2>
+
+      <form id="loginForm">
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit" class="glow-btn">Login</button>
+      </form>
+
+      <div class="form-links">
+        <a href="Signuppage.html">Don’t have an account? Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="rain.js"></script>
+  <script>
+    // Handle login
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Get values
+      const username = e.target[0].value;
+      const password = e.target[1].value;
+
+      if(username && password){
+        // Save login status
+        localStorage.setItem("isLoggedIn", "true");
+
+        // Redirect to main
+        window.location.href = "main.html";
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+  </script>
+</body>
+</html>

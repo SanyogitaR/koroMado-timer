@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KoroMado Timer</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="stylerain.css" />
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+  
+    .spotify-wrapper {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    .playlist-input {
+      margin-top: 10px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .playlist-input input {
+      flex: 1;
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: none;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .playlist-input button {
+      padding: 5px 10px;
+      border: none;
+      background-color: #002b80;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .playlist-input button:hover {
+      background-color: #0040c0;
+    }
+
+    #openSpotifyBtn {
+      color: #fff;
+      font-size: 13px;
+      display: block;
+      margin-top: 8px;
+    }
+    .top-icons {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.icon-btn {
+  font-size: 24px;
+  color:  #FFFFFF ;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}
+
+    
+  </style>
+</head>
+
+<body>
+  <!-- Top Right Icon Buttons -->
+
+<div class="top-icons">
+  <a href="settings.html" title="Settings"><i class="fas fa-cog icon-btn"></i></a>
+  <a href="account.html" title="Account"><i class="fas fa-user icon-btn"></i></a>
+  <a href="appearance.html" title="Appearance"><i class="fas fa-palette icon-btn"></i></a>
+</div>
+
+
+  <!-- Rain Effect Container -->
+  <div class="rain-container"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <img src="images/background.jpg" class="background" alt="bg" />
+    <script>
+  // On page load, apply saved theme if available
+  const savedTheme = localStorage.getItem("selectedTheme");
+  if (savedTheme) {
+    document.querySelector(".background").src = "images/themes/" + savedTheme;
+  }
+</script>
+
+    <!-- Centered Logo -->
+    <div class="logo-center">
+      <img src="images/octopus.png" alt="octopus" class="icon-large" />
+    </div>
+
+    <!-- Timer Glass Box -->
+    <div class="glassbox">
+      <div id="timerDisplay" style="font-size: 70px; color: white;">0:00</div>
+      <div style="margin-top: 10px;" class="button-group">
+        <button class="glow-button" onclick="toggleTimer(this)">▶ Start</button>
+        <button class="glow-button" onclick="resetTimer()">⟳ Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spotify Player -->
+<div class="spotify-wrapper">
+  <iframe
+    id="spotifyPlayer"
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/playlist/4Zjli1P13J5mmSCD5iKAXK?utm_source=generator"
+    width="100%" height="80"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</div>
+
+
+  <!-- JavaScript -->
+  <script>
+
+    
+
+    // Rain Effect
+    const rainContainer = document.querySelector('.rain-container');
+    const totalDrops = 100;
+    for (let i = 0; i < totalDrops; i++) {
+      const drop = document.createElement('div');
+      drop.classList.add('drop');
+      drop.style.left = Math.random() * 100 + 'vw';
+      drop.style.animationDuration = 0.5 + Math.random() * 1.5 + 's';
+      drop.style.animationDelay = Math.random() * 2 + 's';
+      drop.style.height = 10 + Math.random() * 20 + 'px';
+      rainContainer.appendChild(drop);
+    }
+
+    // Timer Logic
+    let seconds = 1500;
+    let timerInterval = null;
+    let isRunning = false;
+    const timerDisplay = document.getElementById('timerDisplay');
+
+    function toggleTimer(button) {
+      if (isRunning) {
+        clearInterval(timerInterval);
+        isRunning = false;
+        button.innerHTML = '▶ Start';
+      } else {
+        timerInterval = setInterval(() => {
+          const min = Math.floor(seconds / 60);
+          const sec = seconds % 60;
+          timerDisplay.innerHTML = `${min}:${sec < 10 ? '0' + sec : sec}`;
+          if (seconds === 0) {
+            clearInterval(timerInterval);
+            isRunning = false;
+            button.innerHTML = '▶ Start';
+          }
+          seconds--;
+        }, 1000);
+        isRunning = true;
+        button.innerHTML = '⏸ Pause';
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      timerDisplay.innerHTML = '0:00';
+      seconds = 1500;
+      isRunning = false;
+      const startBtn = document.querySelector('.glow-button');
+      if (startBtn) {
+        startBtn.innerHTML = '▶ Start';
+      }
+    }
+
+    // Load Custom Playlist
+    function loadPlaylist() {
+      const url = document.getElementById("playlistUrl").value;
+      const match = url.match(/playlist\/([a-zA-Z0-9]+)/);
+      if (match && match[1]) {
+        const playlistId = match[1];
+        const iframe = document.getElementById("spotifyPlayer");
+        iframe.src = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator`;
+
+        // Update "Open in Spotify" link
+        const openBtn = document.getElementById("openSpotifyBtn");
+        openBtn.href = `https://open.spotify.com/playlist/${playlistId}`;
+        openBtn.style.display = "block";
+      } else {
+        alert("Please paste a valid Spotify playlist URL.");
+      }
+    }
+  </script>
+</body>
+</html>
